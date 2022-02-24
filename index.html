@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/src/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/theme-light.css" media="(prefers-color-scheme: dark)">
+    <link rel="shortcut icon" href="/img/favicon/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/img/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
     <title>Debate Tools</title>
 </head>
 
@@ -36,13 +39,30 @@
                     <div class="nav-page" id="item2"></div>
                     <div class="nav-page" id="item3"></div>
                 </div>
+                <button class="FAB" id="timers-FAB">
+                    <div class="FAB-image color-mask" id="timers-FAB-image"></div>
+                    <div class="FAB-text">Start</div>
+                </button>
             </div>
             <div id="page-notes" class="page"></div>
             <div id="page-judges" class="page"></div>
         </div>
     </div>
-    <div id="primary-action"></div>
-    <footer></footer>
+    <footer class="active-segment1">
+        <div class="footer-segment" id="segment1">
+            <div id="timers-icon" class="segment-icon color-icon"></div>
+            <div class="segment-title">Timers</div>
+        </div>
+        <div class="footer-segment" id="segment2">
+            <div id="notes-icon" class="segment-icon color-icon"></div>
+            <div class="segment-title">Notes</div>
+        </div>
+        <div class="footer-segment" id="segment3">
+            <div id="judges-icon" class="segment-icon color-icon"></div>
+            <div class="segment-title">Judges</div>
+        </div>
+        <div id="segment-highlight"></div>
+    </footer>
 </body>
 <script src="js/index.js"></script>
 

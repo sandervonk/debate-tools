@@ -2,24 +2,24 @@
 
 :root {
     /*dark theme*/
-    --m3--dark--on-surface-variant: #D3C4B4;
-    --m3--dark--on-primary-container: #FFDDAF;
-    --m3--dark--surface2: #31281a;
-    --m3--dark--on-surface: #EAE1D9;
-    --m3--dark--surface: #1F1B16;
-    --m3--dark--primary-container: #633F00;
-    --m3--dark--primary: #FFB94C;
-    --m3--dark--outline: #9C8F80;
-    --m3--dark--secondary: #DDC2A1;
-    --m3--dark--background: #1F1B16;
-    --m3--dark--on-secondary-container: #FADEBC;
-    --m3--dark--on-background: #EAE1D9;
-    --m3--dark--on-primary: #462B00;
+    --m3--on-surface-variant: #D3C4B4;
+    --m3--on-primary-container: #FFDDAF;
+    --m3--surface2: #31281a;
+    --m3--on-surface: #EAE1D9;
+    --m3--surface: #1F1B16;
+    --m3--primary-container: #633F00;
+    --m3--primary: #FFB94C;
+    --m3--outline: #9C8F80;
+    --m3--secondary: #DDC2A1;
+    --m3--background: #1F1B16;
+    --m3--on-secondary-container: #FADEBC;
+    --m3--on-background: #EAE1D9;
+    --m3--on-primary: #462B00;
 }
 
 html,
 body {
-    background-color: var(--m3--dark--background);
+    background-color: var(--m3--background);
     margin: 0 !important;
     font-family: 'Roboto';
     overflow: hidden;
@@ -29,7 +29,7 @@ body {
 
 header,
 footer {
-    background: var(--m3--dark--surface2);
+    background: var(--m3--surface2);
     position: fixed;
     width: 100%;
     box-sizing: border-box;
@@ -61,7 +61,7 @@ button#menu {
 button#menu>.menu-bar {
     height: 2px;
     width: 18px;
-    background-color: var(--m3--dark--on-surface-variant);
+    background-color: var(--m3--on-surface-variant);
 }
 
 .menu-bar#middle-menu-bar {
@@ -70,7 +70,7 @@ button#menu>.menu-bar {
 
 #page-title {
     font-size: 19px;
-    color: var(--m3--dark--on-surface-variant);
+    color: var(--m3--on-surface-variant);
 }
 
 .color-mask {
@@ -87,7 +87,7 @@ button#menu>.menu-bar {
     mask-image: url("../img/icon/profile.svg");
     -webkit-mask-image: url("../img/icon/profile.png");
     -webkit-mask-image: url("../img/icon/profile.svg");
-    background: var(--m3--dark--on-surface-variant);
+    background: var(--m3--on-surface-variant);
     height: 36px;
     width: 36px;
 }
@@ -154,7 +154,7 @@ button#menu>.menu-bar {
     justify-content: center;
     border-radius: 15px;
     box-sizing: border-box;
-    background-color: var(--m3--dark--surface2);
+    background-color: var(--m3--surface2);
     height: 40px;
     width: 100%;
     padding: 4px;
@@ -170,7 +170,7 @@ button#menu>.menu-bar {
     align-items: center;
     justify-content: center;
     font-size: 11px;
-    color: var(--m3--dark--secondary);
+    color: var(--m3--secondary);
     z-index: 1;
     transition: color .3s ease-in-out, font-size .3s ease-in-out;
 }
@@ -178,14 +178,14 @@ button#menu>.menu-bar {
 #nav-bar.active-item1 #item1,
 #nav-bar.active-item2 #item2,
 #nav-bar.active-item3 #item3 {
-    color: var(--m3--dark--on-secondary-container);
+    color: var(--m3--on-secondary-container);
     font-size: 12px;
 }
 
 #nav-bar-highlight {
     pointer-events: none;
     border-radius: 12px;
-    background-color: var(--m3--dark--primary-container);
+    background-color: var(--m3--primary-container);
     width: calc(.3333333 * (100vw - 40px));
     height: 32px;
     position: absolute;
@@ -219,8 +219,8 @@ button#menu>.menu-bar {
 
 
 .FAB {
-    background-color: var(--m3--dark--primary-container);
-    color: var(--m3--dark--on-primary-container);
+    background-color: var(--m3--primary-container);
+    color: var(--m3--on-primary-container);
     box-shadow: 0px 1px 3px 0px #0000004d, 0px 4px 8px 3px #00000026;
     border: none;
     padding: 10px;
@@ -244,7 +244,7 @@ button#menu>.menu-bar {
 }
 
 .FAB-image {
-    background: var(--m3--dark--on-primary-container);
+    background: var(--m3--on-primary-container);
     height: 24px;
     width: 24px;
 }
@@ -288,14 +288,14 @@ footer>.footer-segment {
 }
 
 .segment-icon {
-    background-color: var(--m3--dark--on-surface-variant);
+    background-color: var(--m3--on-surface-variant);
     height: 24px;
     width: 24px;
     transition: background-color .3s ease-in-out;
 }
 
 .segment-title {
-    color: var(--m3--dark--on-surface-variant);
+    color: var(--m3--on-surface-variant);
     font-size: 12px;
 }
 
@@ -325,7 +325,7 @@ footer>.footer-segment {
 
 #segment-highlight {
     width: calc(33.33333vw - 56px);
-    background-color: var(--m3--dark--primary-container);
+    background-color: var(--m3--primary-container);
     height: 32px;
     border-radius: 20px;
     position: fixed;
@@ -339,7 +339,7 @@ footer>.footer-segment {
 footer.active-segment1 #segment1 .segment-icon,
 footer.active-segment2 #segment2 .segment-icon,
 footer.active-segment3 #segment3 .segment-icon {
-    background-color: var(--m3--dark--on-primary-container);
+    background-color: var(--m3--on-primary-container);
 }
 
 footer.active-segment1 #segment-highlight {

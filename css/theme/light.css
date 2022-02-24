@@ -1,17 +1,17 @@
 :root {
 
     /*light theme*/
-    --m3--light--on-surface-variant: #4F4539;
-    --m3--light--on-primary-container: #2A1800;
-    --m3--light--surface2: #F2EFE8;
-    --m3--light--on-surface: #1F1B16;
-    --m3--light--surface: #FCFCFC;
-    --m3--light--primary-container: #FFDDAF;
-    --m3--light--primary: #835500;
-    --m3--light--outline: #817567;
-    --m3--light--secondary: #FCFCFC;
-    --m3--light--background: #6F5B40;
-    --m3--light--on-secondary-container: #271904;
-    --m3--light--on-background: #1F1B16;
-    --m3--light--on-primary: #FFFFFF;
+    --m3--on-surface-variant: #4F4539;
+    --m3--on-primary-container: #2A1800;
+    --m3--surface2: #F2EFE8;
+    --m3--on-surface: #1F1B16;
+    --m3--surface: #FCFCFC;
+    --m3--primary-container: #FFDDAF;
+    --m3--primary: #835500;
+    --m3--outline: #817567;
+    --m3--secondary: #FCFCFC;
+    --m3--background: #6F5B40;
+    --m3--on-secondary-container: #271904;
+    --m3--on-background: #1F1B16;
+    --m3--on-primary: #FFFFFF;
 }

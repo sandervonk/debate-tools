@@ -38,8 +38,16 @@ class timer {
             timerData.update()
         }, 500)
     }
+    resume() {
+        this.startTime = (new Date).getTime() - this.time;
+        this.update()
+        this.id = window.setInterval(function () {
+            timerData.update()
+        }, 500)
+    }
     clear() {
         this.stop()
+        this.status = "";
         this.time = 0;
         $(this.parent).find(".timer-bar").css({
             "width": "0%"
@@ -47,7 +55,7 @@ class timer {
         $(this.parent).find(".timer-timestamp").text("0:00")
     }
     stop() {
-        this.status = "";
+        this.status = "stopped";
         console.log(this.id)
         window.clearInterval(this.id)
     }
@@ -92,9 +100,22 @@ $("#timers-FAB, #timer-pause").click(function () {
     //timer functionality here
     if (timerData.status == "running") {
         timerData.stop()
+    } else if (timerData.status == "stopped") {
+        timerData.resume()
     } else {
         timerData.start($(".nav-page.active")[0], parseInt($(".nav-page.active .round.active .round-time").text()) * 60000);
 
+    }
+    if (timerData.status == "running") {
+        $(".nav-page.active #timer-reset").text("Reset")
+        $(".nav-page.active #timer-pause").text("Stop")
+    } else if (timerData.status == "stopped") {
+
+        $(".nav-page.active #timer-reset").text("Reset")
+        $(".nav-page.active #timer-pause").text("Resume")
+    } else {
+        $(".nav-page.active #timer-reset").text(" - ")
+        $(".nav-page.active #timer-pause").text("Start")
     }
 
 })
@@ -103,4 +124,16 @@ $("#timer-reset").click(function () {
     try {
         timerData.clear()
     } catch {}
+    if (timerData.status == "running") {
+        $(".nav-page.active #timer-reset").text("Reset")
+        $(".nav-page.active #timer-pause").text("Stop")
+    } else if (timerData.status == "stopped") {
+
+        $(".nav-page.active #timer-reset").text("Reset")
+        $(".nav-page.active #timer-pause").text("Resume")
+    } else {
+        $(".nav-page.active #timer-reset").text(" - ")
+        $(".nav-page.active #timer-pause").text("Start")
+    }
+
 })

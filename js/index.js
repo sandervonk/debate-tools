@@ -56,7 +56,6 @@ class timer {
     }
     stop() {
         this.status = "stopped";
-        console.log(this.id)
         window.clearInterval(this.id)
     }
     update() {
@@ -95,7 +94,25 @@ $(".round").click((e) => {
     }
     $(".nav-page.active .round.active").removeClass("active")
     $(e.target).addClass("active")
+    updateTimerContext()
 })
+
+function updateTimerContext() {
+    if (timerData.status == "running") {
+        $(".nav-page.active #timer-reset").text("Reset")
+        $(".nav-page.active #timer-pause, #timers-FAB > .FAB-text").text("Stop")
+        $("#timers-FAB-image").attr("version", "stop")
+    } else if (timerData.status == "stopped") {
+
+        $(".nav-page.active #timer-reset").text("Reset")
+        $(".nav-page.active #timer-pause, #timers-FAB > .FAB-text").text("Resume")
+        $("#timers-FAB-image").attr("version", "resume")
+    } else {
+        $(".nav-page.active #timer-reset").text(" - ")
+        $(".nav-page.active #timer-pause, #timers-FAB > .FAB-text").text("Start")
+        $("#timers-FAB-image").attr("version", "start")
+    }
+}
 $("#timers-FAB, #timer-pause").click(function () {
     //timer functionality here
     if (timerData.status == "running") {
@@ -106,34 +123,15 @@ $("#timers-FAB, #timer-pause").click(function () {
         timerData.start($(".nav-page.active")[0], parseInt($(".nav-page.active .round.active .round-time").text()) * 60000);
 
     }
-    if (timerData.status == "running") {
-        $(".nav-page.active #timer-reset").text("Reset")
-        $(".nav-page.active #timer-pause").text("Stop")
-    } else if (timerData.status == "stopped") {
-
-        $(".nav-page.active #timer-reset").text("Reset")
-        $(".nav-page.active #timer-pause").text("Resume")
-    } else {
-        $(".nav-page.active #timer-reset").text(" - ")
-        $(".nav-page.active #timer-pause").text("Start")
-    }
+    updateTimerContext()
 
 })
 
 $("#timer-reset").click(function () {
     try {
         timerData.clear()
-    } catch {}
-    if (timerData.status == "running") {
-        $(".nav-page.active #timer-reset").text("Reset")
-        $(".nav-page.active #timer-pause").text("Stop")
-    } else if (timerData.status == "stopped") {
-
-        $(".nav-page.active #timer-reset").text("Reset")
-        $(".nav-page.active #timer-pause").text("Resume")
-    } else {
-        $(".nav-page.active #timer-reset").text(" - ")
-        $(".nav-page.active #timer-pause").text("Start")
+    } catch {
+        console.log("couldn't clear timer")
     }
-
+    updateTimerContext()
 })

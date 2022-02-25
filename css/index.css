@@ -116,6 +116,8 @@ button#menu>.menu-bar {
     flex-grow: 1;
     position: relative;
     transition: left .2s ease-in-out;
+    height: calc(100vh - 68px - 70px - 15px);
+    flex-shrink: 0;
 }
 
 #page-container>.page {
@@ -167,6 +169,18 @@ button#menu>.menu-bar {
     height: 40px;
     width: 100%;
     padding: 4px;
+    z-index: 244;
+    border-top: 2px solid var(--m3--background);
+}
+
+#nav-scroll-fade-bar {
+    width: 100%;
+    height: 17px;
+    background: linear-gradient(180deg, var(--m3--background) 0%, transparent 100%);
+    position: fixed;
+    z-index: 253;
+    border-top: 2px solid var(--m3--background);
+
 }
 
 .nav-bar-item {
@@ -214,11 +228,9 @@ button#menu>.menu-bar {
 #nav-page-carousel {
     display: flex;
     flex-flow: row nowrap;
-    width: calc(300%);
+    width: calc(300vw);
     flex-grow: 1;
     flex-shrink: 0;
-    height: fit-content;
-    padding-top: 15px;
     position: relative;
     transition: left .3s ease-in-out;
 }
@@ -232,8 +244,9 @@ button#menu>.menu-bar {
     box-sizing: border-box;
     background-color: var(--m3--surface);
     transition: transform .3s ease-in-out, opacity .3s ease-in-out;
-    max-height: calc(100vh - 68px - 70px - 40px - 30px);
+    max-height: calc(100vh - 68px - 70px - 40px - 15px);
     flex-shrink: 0;
+    padding-top: 15px;
 }
 
 #nav-page-carousel.active-item1 {
@@ -293,11 +306,26 @@ button#menu>.menu-bar {
 }
 
 /*pages*/
-#timers-FAB-image {
+#timers-FAB-image,
+#timers-FAB-image[version='start'] {
     mask-image: url("../img/icon/primary-button/primary-timer-add.png");
     mask-image: url("../img/icon/primary-button/primary-timer-add.svg");
     -webkit-mask-image: url("../img/icon/primary-button/primary-timer-add.png");
     -webkit-mask-image: url("../img/icon/primary-button/primary-timer-add.svg");
+}
+
+#timers-FAB-image[version='stop'] {
+    mask-image: url("../img/icon/primary-button/primary-timer-stop.png");
+    mask-image: url("../img/icon/primary-button/primary-timer-stop.svg");
+    -webkit-mask-image: url("../img/icon/primary-button/primary-timer-stop.png");
+    -webkit-mask-image: url("../img/icon/primary-button/primary-timer-stop.svg");
+}
+
+#timers-FAB-image[version='resume'] {
+    mask-image: url("../img/icon/primary-button/primary-timer-resume.png");
+    mask-image: url("../img/icon/primary-button/primary-timer-resume.svg");
+    -webkit-mask-image: url("../img/icon/primary-button/primary-timer-resume.png");
+    -webkit-mask-image: url("../img/icon/primary-button/primary-timer-resume.svg");
 }
 
 #judges-FAB-image {
@@ -411,7 +439,7 @@ footer.active-segment3 #segment-highlight {
     width: calc(100%);
     flex-grow: 1;
     box-sizing: border-box;
-    padding-bottom: calc(40px + 56px)
+    padding-bottom: calc(40px + 20px + 16px + 15px);
 }
 
 .timer-highlight {
@@ -442,12 +470,13 @@ footer.active-segment3 #segment-highlight {
     padding-top: 16px;
 }
 
+
 .timer-time {
     max-width: 150px;
     overflow: hidden;
     border-radius: 8px;
     height: 40px;
-    width: 40%;
+    width: 30%;
     box-shadow: 0 0 0 1px inset var(--m3--secondary);
     display: flex;
     flex-flow: row nowrap;
@@ -471,7 +500,7 @@ footer.active-segment3 #segment-highlight {
 
 .timer-timestamp {
     max-width: 150px;
-    width: calc(.4 * (100vw - 60px));
+    width: calc(.3 * (100vw - 60px));
     align-items: center;
     justify-content: center;
     font-size: 30px;
@@ -552,21 +581,6 @@ footer.active-segment3 #segment-highlight {
     font-weight: 600;
 }
 
-::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-}
-
-::-webkit-scrollbar-corner {
-    background: none;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 6px;
-    border: solid 4px var(--m3--background);
-    background: var(--m3--on-background);
-
-}
 
 ::selection {
     color: var(--m3--on-tertiary);
@@ -592,4 +606,14 @@ footer.active-segment3 #segment-highlight {
     align-items: center;
     justify-content: center;
 
+}
+
+#page-timers #nav-page-carousel .nav-page {
+    overflow-y: auto;
+    flex-grow: 0;
+}
+
+#page-timers {
+    max-height: calc(100vh - 68px - 70px) !important;
+    height: fit-content;
 }

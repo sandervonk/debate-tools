@@ -69,6 +69,10 @@ class timer {
         $(this.parent).find(".timer-timestamp").text(msToTime(this.time));
         if (this.time >= this.length) {
             this.stop()
+            //clean up to the right value if something overflowed
+            $(this.parent).find(".timer-timestamp").text(msToTime(this.length));
+            this.status = "next";
+            updateTimerContext()
         }
     }
 
@@ -103,22 +107,32 @@ function updateTimerContext() {
         $(".nav-page.active #timer-pause, #timers-FAB > .FAB-text").text("Stop")
         $("#timers-FAB-image").attr("version", "stop")
     } else if (timerData.status == "stopped") {
-
         $(".nav-page.active #timer-reset").text("Reset")
         $(".nav-page.active #timer-pause, #timers-FAB > .FAB-text").text("Resume")
         $("#timers-FAB-image").attr("version", "resume")
+    } else if (timerData.status == "next") {
+        $(".nav-page.active #timer-reset").text("Reset")
+        $(".nav-page.active #timer-pause, #timers-FAB > .FAB-text").text("Next")
+        $("#timers-FAB-image").attr("version", "next")
     } else {
         $(".nav-page.active #timer-reset").text(" - ")
         $(".nav-page.active #timer-pause, #timers-FAB > .FAB-text").text("Start")
         $("#timers-FAB-image").attr("version", "start")
     }
 }
-$("#timers-FAB, #timer-pause").click(function () {
+$("#timers-FAB, #timer-pause").click((e) => {
     //timer functionality here
     if (timerData.status == "running") {
         timerData.stop()
     } else if (timerData.status == "stopped") {
         timerData.resume()
+    } else if (timerData.status == "next") {
+        try {
+            $(".nav-page.active .round.active").next()[0].click()
+            timerData.start()
+        } catch {
+            console.log("no more rounds!")
+        }
     } else {
         timerData.start($(".nav-page.active")[0], parseInt($(".nav-page.active .round.active .round-time").text()) * 60000);
 

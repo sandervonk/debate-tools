@@ -328,6 +328,13 @@ button#menu>.menu-bar {
     -webkit-mask-image: url("../img/icon/primary-button/primary-timer-resume.svg");
 }
 
+#timers-FAB-image[version='next'] {
+    mask-image: url("../img/icon/primary-button/primary-timer-next.png");
+    mask-image: url("../img/icon/primary-button/primary-timer-next.svg");
+    -webkit-mask-image: url("../img/icon/primary-button/primary-timer-next.png");
+    -webkit-mask-image: url("../img/icon/primary-button/primary-timer-next.svg");
+}
+
 #judges-FAB-image {
     mask-image: url("../img/icon/primary-button/primary-judges-add.png");
     mask-image: url("../img/icon/primary-button/primary-judges-add.svg");

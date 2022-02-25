@@ -232,7 +232,8 @@ button#menu>.menu-bar {
     box-sizing: border-box;
     background-color: var(--m3--surface);
     transition: transform .3s ease-in-out, opacity .3s ease-in-out;
-    max-height: calc(100vh - 68px - 70px - 40px - 30px)
+    max-height: calc(100vh - 68px - 70px - 40px - 30px);
+    flex-shrink: 0;
 }
 
 #nav-page-carousel.active-item1 {
@@ -244,7 +245,7 @@ button#menu>.menu-bar {
 }
 
 #nav-page-carousel.active-item3 {
-    left: 0;
+    left: -200vw;
 }
 
 #nav-page-carousel.active-item1 #item1,
@@ -460,12 +461,12 @@ footer.active-segment3 #segment-highlight {
 }
 
 .timer-bar {
-
     background: var(--m3--secondary);
     position: relative;
     left: -100%;
-    width: 50%;
+    width: 0%;
     overflow: hidden;
+    transition: width .1s linear;
 }
 
 .timer-timestamp {
@@ -570,4 +571,25 @@ footer.active-segment3 #segment-highlight {
 ::selection {
     color: var(--m3--on-tertiary);
     background: var(--m3--tertiary);
+}
+
+.nav-page#item3 {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--m3--on-surface);
+    text-align: center;
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
 }

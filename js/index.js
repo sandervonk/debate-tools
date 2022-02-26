@@ -152,3 +152,15 @@ $("#timer-reset").click(function () {
     }
     updateTimerContext()
 })
+/*notes*/
+const blankNote = ` <div class="note-container"> <input type="text" class="note-title" placeholder="Title" value=""></input> <div contenteditable class="note-content" placeholder="Content Text">Tap to edit </div> <div class="note-actions"> <button class="note-action-edit"> <div id="edit-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-duplicate"> <div id="duplicate-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-save"> <div id="save-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-hide"> <div id="hide-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-delete"> <div id="delete-mask" class="color-mask note-action-icon"></div> </button> </div> </div>`
+/*workaround so it works on dynamically created elements*/
+$(document).on('click', ".note-action-delete", (e) => {
+    $(e.target).closest(".note-container").remove();
+})
+$(document).on('click', ".note-action-duplicate", (e) => {
+    $(e.target).closest(".note-container").clone().appendTo("#notes-container");
+})
+$("#notes-FAB").click(function () {
+    $("#notes-container").append(blankNote);
+})

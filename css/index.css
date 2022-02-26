@@ -7,6 +7,7 @@
     --m3--surface2: #31281a;
     --m3--on-surface: #EAE1D9;
     --m3--surface: #1F1B16;
+    --m3--surface-variant: #4F4539;
     --m3--primary-container: #633F00;
     --m3--primary: #FFB94C;
     --m3--outline: #9C8F80;
@@ -347,10 +348,10 @@ button#menu>.menu-bar {
 }
 
 #notes-FAB-image {
-    mask-image: url("../img/icon/primary-button/primary-notes-reload.png");
-    mask-image: url("../img/icon/primary-button/primary-notes-reload.svg");
-    -webkit-mask-image: url("../img/icon/primary-button/primary-notes-reload.png");
-    -webkit-mask-image: url("../img/icon/primary-button/primary-notes-reload.svg");
+    mask-image: url("../img/icon/primary-button/primary-notes-add.png");
+    mask-image: url("../img/icon/primary-button/primary-notes-add.svg");
+    -webkit-mask-image: url("../img/icon/primary-button/primary-notes-add.png");
+    -webkit-mask-image: url("../img/icon/primary-button/primary-notes-add.svg");
 }
 
 footer {
@@ -640,11 +641,143 @@ footer.active-segment3 #segment-highlight {
 #page-notes {
     display: flex;
     flex-flow: column;
-    margin-top: -15px;
-    padding-bottom: 15px;
 }
 
 #notes-container {
     flex-grow: 1;
     height: max-content;
+    display: flex;
+    flex-flow: column;
+    padding: 10px 0;
+    padding-bottom: calc(40px + 20px + 16px + 15px);
+}
+
+.note-container {
+    border: 1px solid var(--m3--outline);
+    background: var(--m3--surface);
+    border-radius: 15px;
+    min-height: fit-content;
+    max-height: 200%;
+    padding: 15px;
+    display: flex;
+    flex-flow: column;
+    margin: 5px 0;
+}
+
+.note-container>* {
+    color: var(--m3--on-surface);
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--surface);
+    border: none;
+}
+
+.note-title {
+    font-size: 25px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    margin-bottom: 10px;
+    padding: 0 !important;
+
+}
+
+textarea,
+.note-content {
+    resize: none;
+}
+
+
+
+.note-content {
+    flex-grow: 1;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    color: var(--m3--on-surface-variant);
+    min-height: max-content;
+    flex-basis: max-content;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.note-content:empty:before {
+    content: attr(placeholder);
+    color: var(--m3--on-surface-variant);
+    opacity: .5;
+}
+
+.note-actions {
+    height: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 15px;
+}
+
+.note-actions>button {
+    /*options*/
+    background-color: var(--m3--surface2);
+    background-color: var(--m3--surface);
+    border: none;
+    aspect-ratio: 1 / 1;
+    width: 30px;
+    border-radius: 8px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+
+.note-actions>.button-separator {
+    padding: 7.5px;
+}
+
+.note-title:active,
+.note-title:focus,
+.note-title:hover,
+.note-title:focus-within {
+    border-bottom: solid 2px var(--m3--on-surface-variant);
+}
+
+.note-action-icon {
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--m3--on-surface-variant)
+}
+
+#edit-mask {
+    mask-image: url("../img/icon/note-action/edit.png");
+    mask-image: url("../img/icon/note-action/edit.svg");
+    -webkit-mask-image: url("../img/icon/note-action/edit.png");
+    -webkit-mask-image: url("../img/icon/note-action/edit.svg");
+}
+
+#duplicate-mask {
+    mask-image: url("../img/icon/note-action/duplicate.png");
+    mask-image: url("../img/icon/note-action/duplicate.svg");
+    -webkit-mask-image: url("../img/icon/note-action/duplicate.png");
+    -webkit-mask-image: url("../img/icon/note-action/duplicate.svg");
+}
+
+#save-mask {
+    mask-image: url("../img/icon/note-action/add.png");
+    mask-image: url("../img/icon/note-action/add.svg");
+    -webkit-mask-image: url("../img/icon/note-action/add.png");
+    -webkit-mask-image: url("../img/icon/note-action/add.svg");
+}
+
+#hide-mask {
+    mask-image: url("../img/icon/note-action/hide.png");
+    mask-image: url("../img/icon/note-action/hide.svg");
+    -webkit-mask-image: url("../img/icon/note-action/hide.png");
+    -webkit-mask-image: url("../img/icon/note-action/hide.svg");
+}
+
+#delete-mask {
+    mask-image: url("../img/icon/note-action/delete.png");
+    mask-image: url("../img/icon/note-action/delete.svg");
+    -webkit-mask-image: url("../img/icon/note-action/delete.png");
+    -webkit-mask-image: url("../img/icon/note-action/delete.svg");
 }

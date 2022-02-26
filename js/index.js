@@ -164,3 +164,7 @@ $(document).on('click', ".note-action-duplicate", (e) => {
 $("#notes-FAB").click(function () {
     $("#notes-container").append(blankNote);
 })
+$(document).on('click', "#edit-mask, .note-container:not(.editing)", (e) => {
+    $(".note-container").removeClass("editing");
+    $(e.target).closest(".note-container").addClass("editing");
+})

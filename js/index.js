@@ -38,6 +38,9 @@ class timer {
             timerData.update()
         }, 500)
     }
+    startCurrent() {
+        this.start($(".nav-page.active")[0], parseInt($(".nav-page.active .round.active .round-time").text()) * 60000);
+    }
     resume() {
         this.startTime = (new Date).getTime() - this.time;
         this.update()
@@ -129,12 +132,12 @@ $("#timers-FAB, #timer-pause").click((e) => {
     } else if (timerData.status == "next") {
         try {
             $(".nav-page.active .round.active").next()[0].click()
-            timerData.start()
+            timerData.startCurrent()
         } catch {
             console.log("no more rounds!")
         }
     } else {
-        timerData.start($(".nav-page.active")[0], parseInt($(".nav-page.active .round.active .round-time").text()) * 60000);
+        timerData.startCurrent()
 
     }
     updateTimerContext()

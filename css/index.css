@@ -102,8 +102,8 @@ button#menu>.menu-bar {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    padding-top: calc(15px + 68px);
-    padding-bottom: calc(15px + 70px);
+    padding-top: calc(68px);
+    padding-bottom: calc(70px);
     display: flex;
     flex-flow: column;
 
@@ -116,7 +116,7 @@ button#menu>.menu-bar {
     flex-grow: 1;
     position: relative;
     transition: left .2s ease-in-out;
-    height: calc(100vh - 68px - 70px - 15px);
+    height: calc(100vh - 68px - 70px);
     flex-shrink: 0;
 }
 
@@ -247,7 +247,7 @@ button#menu>.menu-bar {
     box-sizing: border-box;
     background-color: var(--m3--surface);
     transition: transform .3s ease-in-out, opacity .3s ease-in-out;
-    max-height: calc(100vh - 68px - 70px - 40px - 15px);
+    max-height: calc(100vh - 68px - 70px - 40px);
     flex-shrink: 0;
     padding-top: 15px;
     margin-right: 15px;
@@ -450,7 +450,7 @@ footer.active-segment3 #segment-highlight {
     width: calc(100%);
     flex-grow: 1;
     box-sizing: border-box;
-    padding-bottom: calc(40px + 20px + 16px + 15px);
+    padding-bottom: calc(40px + 20px + 16px + 30px);
 }
 
 .timer-highlight {
@@ -634,4 +634,17 @@ footer.active-segment3 #segment-highlight {
 #page-timers {
     max-height: calc(100vh - 68px - 70px) !important;
     height: fit-content;
+    padding-top: 15px !important;
+}
+
+#page-notes {
+    display: flex;
+    flex-flow: column;
+    margin-top: -15px;
+    padding-bottom: 15px;
+}
+
+#notes-container {
+    flex-grow: 1;
+    height: max-content;
 }

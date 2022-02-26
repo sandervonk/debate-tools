@@ -167,15 +167,17 @@ button#menu>.menu-bar {
     box-sizing: border-box;
     background-color: var(--m3--surface2);
     height: 40px;
-    width: 100%;
+    width: calc(100vw - 30px);
     padding: 4px;
     z-index: 244;
+    position: fixed;
     border-top: 2px solid var(--m3--background);
 }
 
 #nav-scroll-fade-bar {
-    width: 100%;
-    height: 17px;
+    width: calc(100vw - 30px);
+    margin-top: 39px;
+    height: 18px;
     background: linear-gradient(180deg, var(--m3--background) 0%, transparent 100%);
     position: fixed;
     z-index: 253;
@@ -212,17 +214,17 @@ button#menu>.menu-bar {
     width: calc(.3333333 * (100vw - 40px));
     height: 32px;
     position: absolute;
-    left: calc(20px);
+    left: calc(5px);
     z-index: 0;
-    transition: left .2s ease-in-out
+    transition: left .2s ease-in-out;
 }
 
 #nav-bar.active-item2 #nav-bar-highlight {
-    left: calc(20px + (.3333333 * (100vw - 40px)));
+    left: calc(5px + (.3333333 * (100vw - 40px)));
 }
 
 #nav-bar.active-item3 #nav-bar-highlight {
-    left: calc(20px + (.6666666 * (100vw - 40px)));
+    left: calc(5px + (.6666666 * (100vw - 40px)));
 }
 
 #nav-page-carousel {
@@ -233,13 +235,14 @@ button#menu>.menu-bar {
     flex-shrink: 0;
     position: relative;
     transition: left .3s ease-in-out;
+    margin-top: 40px;
 }
 
 #nav-page-carousel .nav-page {
     transform-origin: center;
     transform: scale(.75);
-    width: 100vw;
-    padding-right: 30px;
+    width: calc(100vw - 15px);
+    padding-right: 15px;
     opacity: .5;
     box-sizing: border-box;
     background-color: var(--m3--surface);
@@ -247,6 +250,7 @@ button#menu>.menu-bar {
     max-height: calc(100vh - 68px - 70px - 40px - 15px);
     flex-shrink: 0;
     padding-top: 15px;
+    margin-right: 15px;
 }
 
 #nav-page-carousel.active-item1 {
@@ -592,6 +596,13 @@ footer.active-segment3 #segment-highlight {
 ::selection {
     color: var(--m3--on-tertiary);
     background: var(--m3--tertiary);
+}
+
+@media(orientation: landscape),
+(min-width: 768px) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .nav-page#item3 {

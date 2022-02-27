@@ -642,6 +642,8 @@ footer.active-segment3 #segment-highlight {
     display: flex;
     flex-flow: column;
     padding: 0 10px !important;
+
+    align-items: center;
 }
 
 #notes-container {
@@ -651,6 +653,8 @@ footer.active-segment3 #segment-highlight {
     flex-flow: row wrap;
     padding: 10px 0;
     padding-bottom: calc(40px + 20px + 16px + 15px);
+    max-width: fit-content;
+
 }
 
 .note-container {
@@ -665,6 +669,8 @@ footer.active-segment3 #segment-highlight {
     flex-flow: column;
     margin: 5px;
     flex-basis: 250px;
+    min-height: max-content;
+    max-height: 500px;
     min-width: 29%;
     flex-grow: 1;
     flex-shrink: 0;

@@ -641,13 +641,14 @@ footer.active-segment3 #segment-highlight {
 #page-notes {
     display: flex;
     flex-flow: column;
+    padding: 0 10px !important;
 }
 
 #notes-container {
     flex-grow: 1;
     height: max-content;
     display: flex;
-    flex-flow: column;
+    flex-flow: row wrap;
     padding: 10px 0;
     padding-bottom: calc(40px + 20px + 16px + 15px);
 }
@@ -656,12 +657,17 @@ footer.active-segment3 #segment-highlight {
     border: 1px solid var(--m3--outline);
     background: var(--m3--surface);
     border-radius: 15px;
+    box-sizing: border-box;
     min-height: fit-content;
     max-height: 200%;
     padding: 15px;
     display: flex;
     flex-flow: column;
-    margin: 5px 0;
+    margin: 5px;
+    flex-basis: 250px;
+    min-width: 29%;
+    flex-grow: 1;
+    flex-shrink: 0;
 }
 
 .note-container>* {
@@ -673,7 +679,7 @@ footer.active-segment3 #segment-highlight {
 }
 
 .note-title {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -692,7 +698,7 @@ textarea,
 
 .note-content {
     flex-grow: 1;
-    font-size: 16px;
+    font-size: 14px;
     font-family: "Roboto", sans-serif;
     color: var(--m3--on-surface-variant);
     min-height: max-content;
@@ -710,10 +716,39 @@ textarea,
 .note-actions {
     height: 30px;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row-reverse nowrap;
     justify-content: space-between;
     align-content: center;
     margin-top: 15px;
+    align-self: flex-end;
+    width: 30px;
+    max-width: 300px;
+    flex-shrink: 0;
+    margin-left: calc(100% - 30px);
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: width .2s ease-in-out, margin-left .2s ease-in-out;
+}
+
+.note-actions:hover,
+.note-container.editing .note-actions {
+    width: 100%;
+    margin-left: 0;
+}
+
+.note-container:not(.editing) .note-actions>button {
+    opacity: 0;
+
+}
+
+.note-container:not(.editing) .note-actions:hover>button {
+    opacity: .5;
+
+}
+
+.note-container:not(.editing) .note-actions>button:first-of-type {
+    opacity: 1;
+
 }
 
 .note-actions>button {
@@ -726,6 +761,7 @@ textarea,
     border-radius: 8px;
     padding: 5px;
     box-sizing: border-box;
+    transition: opacity .2s ease-in-out;
 }
 
 

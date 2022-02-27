@@ -651,9 +651,11 @@ footer.active-segment3 #segment-highlight {
     height: max-content;
     display: flex;
     flex-flow: row wrap;
+    align-content: start;
     padding: 10px 0;
     padding-bottom: calc(40px + 20px + 16px + 15px);
-    max-width: fit-content;
+    width: 100%;
+    /*max-width: fit-content;*/
 
 }
 

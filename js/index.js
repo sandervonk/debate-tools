@@ -1,19 +1,15 @@
 try {
-    for (let noteData of JSON.parse(localStorage["notes-data"])) {
-        noteData.title
-        noteData.content
-        $("#notes-container").append(` <div class="note-container"> <input type="text" class="note-title" placeholder="Title" value="${noteData.title}"></input> <div contenteditable class="note-content" placeholder="Content Text">${noteData.content}</div> <div class="note-actions"> <button class="note-action-edit"> <div id="edit-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-duplicate"> <div id="duplicate-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-save"> <div id="save-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-hide"> <div id="hide-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-delete"> <div id="delete-mask" class="color-mask note-action-icon"></div> </button> </div> </div>`);
-    }
+    const testData = JSON.parse(localStorage["notes-data"])
 } catch {
     localStorage["notes-data"] = JSON.stringify([{
         title: "Example Note",
         content: "Content text goes here. Tap to try adding something!"
     }]);
-    for (let noteData of JSON.parse(localStorage["notes-data"])) {
-        noteData.title
-        noteData.content
-        $("#notes-container").append(` <div class="note-container"> <input type="text" class="note-title" placeholder="Title" value="${noteData.title}"></input> <div contenteditable class="note-content" placeholder="Content Text">${noteData.content}</div> <div class="note-actions"> <button class="note-action-edit"> <div id="edit-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-duplicate"> <div id="duplicate-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-save"> <div id="save-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-hide"> <div id="hide-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-delete"> <div id="delete-mask" class="color-mask note-action-icon"></div> </button> </div> </div>`);
-    }
+}
+for (let noteData of JSON.parse(localStorage["notes-data"])) {
+    noteData.title
+    noteData.content
+    $("#notes-container").append(` <div class="note-container"> <input type="text" class="note-title" placeholder="Title" value="${noteData.title}"></input> <div contenteditable class="note-content" placeholder="Content Text">${noteData.content}</div> <div class="note-actions"> <button class="note-action-edit"> <div id="edit-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-duplicate"> <div id="duplicate-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-save"> <div id="save-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-hide"> <div id="hide-mask" class="color-mask note-action-icon"></div> </button> <div class="button-separator"></div> <button class="note-action-delete"> <div id="delete-mask" class="color-mask note-action-icon"></div> </button> </div> </div>`);
 }
 
 function msToTime(s) {
@@ -194,7 +190,9 @@ $('#notes-container').on('DOMSubtreeModified', function () {
             title: $(element).children(".note-title").val(),
             content: $(element).children(".note-content").text()
         }
-        notesArr.push(itemContent);
+        if (itemContent.title != "" || itemContent.content != "Tap to edit ") {
+            notesArr.push(itemContent);
+        }
 
     })
     localStorage["notes-data"] = JSON.stringify(notesArr)

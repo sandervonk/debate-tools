@@ -5,18 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/src/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/theme/light.css" media="(prefers-color-scheme: light)">
-    <link rel="shortcut icon" href="/img/favicon/favicon.png" type="image/png">
-    <link rel="shortcut icon" href="/img/favicon/favicon.svg" type="image/svg+xml">
-    <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
+    <script src="./js/src/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/theme/light.css" media="(prefers-color-scheme: light)">
+    <link rel="shortcut icon" href="./img/favicon/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="./img/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="./img/favicon/favicon.ico" type="image/x-icon">
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="img/icon/icon-72x72.png" />
+    <link rel="apple-touch-icon" href="img/icon/icon-96x96.png" />
+    <link rel="apple-touch-icon" href="img/icon/icon-128x128.png" />
+    <link rel="apple-touch-icon" href="img/icon/icon-144x144.png" />
+    <link rel="apple-touch-icon" href="img/icon/icon-152x152.png" />
+    <link rel="apple-touch-icon" href="img/icon/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="img/icon/icon-384x384.png" />
+    <link rel="apple-touch-icon" href="img/icon/icon-512x512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#31281a" />
+    <meta name="theme-color" content="#31281a" />
+    <meta name="apple-mobile-web-app-status-bar" content="#F2EFE8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#F2EFE8" media="(prefers-color-scheme: light)" />
     <title>Debate Tools</title>
 </head>
 
 <body>
     <header>
-        <button id="menu">
+        <button id="menu" title="Open menu">
             <div class="menu-bar"></div>
             <div class="menu-bar" id="middle-menu-bar"></div>
             <div class="menu-bar"></div>
@@ -47,8 +60,10 @@
                                         </div>
                                     </div>
                                     <div class="timer-actions">
-                                        <button class="action-button secondary-alt" id="timer-reset">Reset</button>
-                                        <button class="action-button secondary" id="timer-pause">Start</button>
+                                        <button title="Reset timer" class="action-button secondary-alt"
+                                            id="timer-reset">Reset</button>
+                                        <button title="Start/Stop timer" class="action-button secondary"
+                                            id="timer-pause">Start</button>
                                     </div>
                                 </div>
                             </div>
@@ -198,6 +213,7 @@
         <div id="segment-highlight"></div>
     </footer>
 </body>
-<script src="js/index.js"></script>
+<script src="./js/index.js"></script>
+<script src="app.js"></script>
 
 </html>

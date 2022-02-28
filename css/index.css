@@ -655,7 +655,7 @@ footer.active-segment3 #segment-highlight {
     padding: 10px 0;
     padding-bottom: calc(40px + 20px + 16px + 15px);
     width: 100%;
-    /*max-width: fit-content;*/
+    max-width: calc(520px + 20vw);
 
 }
 

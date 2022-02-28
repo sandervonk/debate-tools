@@ -1,0 +1,33 @@
+{
+    "Parliamentary": [{
+            "name": "Prime Minister Constructive",
+            "length": 7,
+            "description": "Construct the focus of the debate and 1-3 central arguments"
+        },
+        {
+            "name": "Leader of Opposition Constructive",
+            "length": 8,
+            "description": "Construct 1-3 central arguments and refute the previous claims"
+        },
+        {
+            "name": "Member of Argument",
+            "length": 8,
+            "description": ""
+        },
+        {
+            "name": "Member of Opposition",
+            "length": 8,
+            "description": ""
+        },
+        {
+            "name": "Leader of Opposition Rebuttal",
+            "length": 4,
+            "description": "'We have won because....' Go over all of the arguments you've won."
+        },
+        {
+            "name": "Prime Minister Rebuttal",
+            "length": 5,
+            "description": "'We have won because....' Go over all of the arguments you've won."
+        }
+    ]
+}

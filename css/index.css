@@ -116,7 +116,7 @@ button#menu>.menu-bar {
     width: 300vw;
     flex-grow: 1;
     position: relative;
-    transition: left .2s ease-in-out;
+    transition: left .2s ease-in-out, top .2s ease-in-out;
     height: calc(100vh - 68px - 70px);
     flex-shrink: 0;
 }
@@ -426,7 +426,7 @@ footer>.footer-segment {
     left: 0px;
     margin-left: 28px;
     pointer-events: none;
-    transition: left .2s ease-in-out
+    transition: left .2s ease-in-out, top .2s ease-in-out;
 }
 
 footer.active-segment1 #segment1 .segment-icon,

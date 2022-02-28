@@ -35,11 +35,11 @@ footer {
 }
 
 #page-container.active-segment2 {
-    top: calc(-100vh + 2 * 68px);
+    top: calc(-100vh + 68px);
 }
 
 #page-container.active-segment3 {
-    top: calc(-200vh + 3 * 68px);
+    top: calc(-200vh + 2 * 68px);
 }
 
 #nav-bar-highlight {
@@ -84,7 +84,8 @@ footer {
 #page-container>.page {
     width: calc(100vw - 70px) !important;
     height: calc(100vh - 68px) !important;
-    min-height: calc(100vh - 68px) !important;
+    max-height: calc(100vh - 68px) !important;
+    min-height: unset;
     flex-shrink: 0 !important;
 }
 

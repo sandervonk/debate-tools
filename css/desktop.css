@@ -7,13 +7,12 @@ footer {
     width: 70px;
     flex-flow: column;
     padding-top: 68px;
+    top: 0 !important;
 }
 
 #body-content {
     padding-bottom: 0 !important;
     padding-left: 70px !important;
-    top: 0 !important;
-    position: absolute;
 }
 
 
@@ -75,9 +74,7 @@ footer {
     height: calc(100vh - 68px) !important;
 }
 
-#page-notes {
-    margin-left: 70px;
-}
+#page-notes {}
 
 #segment-highlight {
     width: 50px;

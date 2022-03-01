@@ -115,3 +115,8 @@ footer.active-segment3 #segment-highlight {
 
     top: calc((100vh - 68px) * (2 / 3) + 68px);
 }
+
+#menu-section {
+    width: 300px;
+    left: -300px;
+}

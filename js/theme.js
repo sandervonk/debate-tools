@@ -13,7 +13,9 @@ function setupThemes(themes) {
         $("select#themes").append(`<option class="theme-option">${themeName}</option>`)
     }
     if (window.matchMedia("(prefers-color-scheme: light)")) {
-        $("select#themes").val("Brown Light")
+        $("select#themes").val("Classic Light");
+    } else {
+        $("select#themes").val("Classic Dark")
     }
 }
 

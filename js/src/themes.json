@@ -1,5 +1,5 @@
 {
-    "Brown Dark": {
+    "Classic Dark": {
         "on-surface-variant": "#D3C4B4",
         "on-primary-container": "#FFDDAF",
         "surface2": "#31281a",
@@ -39,7 +39,7 @@
         "tertiary": "#516440",
         "on-tertiary": "#FFFFFF"
     },
-    "Classic Dark": {
+    "Purple Dark": {
         "on-surface-variant": "#CAC4D0",
         "on-primary-container": "#EADDFF",
         "surface2": "#2A2831",
@@ -58,5 +58,25 @@
         "on-primary": "#381E72",
         "tertiary": "#EFB8C8",
         "on-tertiary": "#492532"
+    },
+    "Purple Light": {
+        "on-surface-variant": "#49454F",
+        "on-primary-container": "#21005D",
+        "surface2": "#F3EDF7",
+        "on-surface": "#1C1B1F",
+        "surface": "#FFFBFE",
+        "surface-variant": "#E7E0EC",
+        "primary-container": "#EADDFF",
+        "primary": "#6750A4",
+        "outline": "#79747E",
+        "background": "#FFFBFE",
+        "secondary": "#625B71",
+        "on-secondary": "#FFFFFF",
+        "secondary-container": "#E8DEF8",
+        "on-secondary-container": "#1D192B",
+        "on-background": "#1C1B1F",
+        "on-primary": "#FFFFFF",
+        "tertiary": "#7D5260",
+        "on-tertiary": "#FFFFFF"
     }
 }

@@ -50,6 +50,7 @@ header {
     justify-content: space-between;
     padding: 16px;
     top: 0;
+    z-index: 2000;
 }
 
 button#menu {
@@ -827,4 +828,38 @@ textarea,
     mask-image: url("../img/icon/note-action/delete.svg");
     -webkit-mask-image: url("../img/icon/note-action/delete.png");
     -webkit-mask-image: url("../img/icon/note-action/delete.svg");
+}
+
+#menu-section {
+    width: 300px;
+    height: calc(100vh - 68px);
+    position: fixed;
+    left: -300px;
+    max-width: 100vw;
+    z-index: 1000;
+    background-color: var(--m3--surface2);
+    box-sizing: border-box;
+    margin-top: 68px;
+    padding: 20px;
+    transition: left .2s ease-in-out;
+    box-shadow: 1px 0px 2px 0px #0000004d, 2px 0px 6px 2px #00000026;
+}
+
+#menu-section.active {
+    left: 0;
+}
+
+select#themes {
+    background: var(--m3--secondary-container);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--m3--on-secondary-container);
+    border: solid 2px var(--m3--outline);
+}
+
+.theme-option,
+select#themes {
+    text-transform: capitalize;
 }

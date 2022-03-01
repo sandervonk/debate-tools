@@ -197,3 +197,6 @@ $('#notes-container').on('DOMSubtreeModified', function () {
     })
     localStorage["notes-data"] = JSON.stringify(notesArr)
 });
+$("button#menu").click(function () {
+    $("#menu-section").toggleClass("active");
+});

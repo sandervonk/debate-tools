@@ -2,6 +2,7 @@ var themeJSON = {};
 
 function setupThemes(themes) {
     console.log(themes);
+    $("select#themes").html("")
     for (themeName of Object.keys(themes)) {
         console.log(themeName)
 
@@ -16,6 +17,11 @@ function setupThemes(themes) {
         $("select#themes").val("Classic Light");
     } else {
         $("select#themes").val("Classic Dark")
+    }
+    if (Object.keys(themeJSON).includes(localStorage["theme-option"])) {
+        $("#theme-auto").addClass("disabled")
+        $("select#themes").val(localStorage["theme-option"])
+        $(document.body).attr("style", themeJSON[$("select#themes").val()])
     }
 }
 
@@ -33,6 +39,20 @@ $.ajax({
 });
 $("select#themes").on('change', function (e) {
     console.log("change")
-
+    $("#theme-auto").addClass("disabled")
+    localStorage["theme-option"] = $("select#themes").val()
     $(document.body).attr("style", themeJSON[$("select#themes").val()])
+})
+$("#theme-auto").click(function () {
+    $("#theme-auto").removeClass("disabled")
+    if (window.matchMedia("(prefers-color-scheme: light)")) {
+        $("select#themes").val("Classic Light");
+    } else {
+        $("select#themes").val("Classic Dark")
+    }
+    if (Object.keys(themeJSON).includes(localStorage["theme-option"])) {
+        let altTheme = "";
+        $("select#themes").val(localStorage["theme-option"])
+        $(document.body).attr("style", themeJSON[$("select#themes").val()])
+    }
 })

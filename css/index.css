@@ -866,6 +866,25 @@ select#themes {
     border: solid 2px var(--m3--outline);
 }
 
+button {
+    cursor: pointer;
+}
+
+button.disabled {
+    filter: saturate(0) brightness(2) !important;
+    opacity: .5;
+}
+
+#theme-auto {
+    background: var(--m3--primary);
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--m3--on-primary);
+    transition: filter .5s ease-in-out, opacity .5s ease-in-out;
+}
+
 .theme-option,
 select#themes {
     text-transform: capitalize;

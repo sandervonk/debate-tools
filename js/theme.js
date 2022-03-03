@@ -13,13 +13,12 @@ function setupThemes(themes) {
         themeJSON[themeName] = themeCSS;
         $("select#themes").append(`<option class="theme-option">${themeName}</option>`)
     }
-    if (window.matchMedia("(prefers-color-scheme: light)")) {
+    if (window.matchMedia("(prefers-color-scheme: light)").matches) {
         $("select#themes").val("Classic Light");
     } else {
         $("select#themes").val("Classic Dark")
     }
     if (Object.keys(themeJSON).includes(localStorage["theme-option"])) {
-        $("#theme-auto").addClass("disabled")
         $("select#themes").val(localStorage["theme-option"])
         $(document.body).attr("style", themeJSON[$("select#themes").val()])
     }
@@ -38,21 +37,30 @@ $.ajax({
     },
 });
 $("select#themes").on('change', function (e) {
-    console.log("change")
-    $("#theme-auto").addClass("disabled")
     localStorage["theme-option"] = $("select#themes").val()
     $(document.body).attr("style", themeJSON[$("select#themes").val()])
+
+    if (Object.keys(themeJSON).includes(localStorage["theme-option"])) {
+        let systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "Light" : "Dark";
+        if (!localStorage["theme-option"].includes(systemTheme)) {
+            $("#theme-auto").addClass("disabled")
+        } else {
+            $("#theme-auto").removeClass("disabled")
+        }
+    }
 })
 $("#theme-auto").click(function () {
     $("#theme-auto").removeClass("disabled")
-    if (window.matchMedia("(prefers-color-scheme: light)")) {
+
+    if (Object.keys(themeJSON).includes(localStorage["theme-option"])) {
+        let systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "Light" : "Dark";
+        let altTheme = localStorage["theme-option"].replace("Light", systemTheme).replace("Dark", systemTheme);
+        $("select#themes").val(altTheme)
+        localStorage["theme-option"] = $("select#themes").val()
+        $(document.body).attr("style", themeJSON[$("select#themes").val()])
+    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
         $("select#themes").val("Classic Light");
     } else {
         $("select#themes").val("Classic Dark")
-    }
-    if (Object.keys(themeJSON).includes(localStorage["theme-option"])) {
-        let altTheme = "";
-        $("select#themes").val(localStorage["theme-option"])
-        $(document.body).attr("style", themeJSON[$("select#themes").val()])
     }
 })

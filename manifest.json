@@ -1,8 +1,8 @@
 {
     "name": "Debate Tools",
     "short_name": "Debate Tools",
-    "start_url": "https://sander.vonk.productions/debate-tools/",
-    "scope": "https://sander.vonk.productions/debate-tools/",
+    "start_url": "https://sander.vonk.one/debate-tools/",
+    "scope": "https://sander.vonk.one/debate-tools/",
     "display": "standalone",
     "background_color": "#1F1B16",
     "theme_color": "#31281a",
